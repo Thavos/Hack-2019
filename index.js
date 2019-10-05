@@ -35,19 +35,19 @@ const KoseF = async (url) => {
     if(element.properties['N_OBJ'].includes('(uzamk.)') == false){
       let properties = {plastic : false, metal : false, paper : false, glass : false, more : false};
       let more = 0;
-      if(element.properties['N_OBJ'].includes('(plast)') == 1){
+      if(element.properties['N_OBJ'].includes('plast') == 1){
         properties.plastic = true;
         more++;
       }
-      if(element.properties['N_OBJ'].includes('(papier)') == 1){
+      if(element.properties['N_OBJ'].includes('papier') == 1){
         properties.paper = true;
         more++;
       }
-      if(element.properties['N_OBJ'].includes('(kov)') == 1){
+      if(element.properties['N_OBJ'].includes('kov') == 1){
         properties.metal = true;
         more++;
       }
-      if(element.properties['N_OBJ'].includes('(sklo)') == 1){
+      if(element.properties['N_OBJ'].includes('sklo') == 1){
         properties.glass = true;
         more++;
       }
