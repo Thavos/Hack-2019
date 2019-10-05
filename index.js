@@ -9,6 +9,3 @@ express()
     res.send(data);
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
-
-
-  
