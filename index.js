@@ -161,7 +161,7 @@ express()
     })
     /*kontajnery.forEach((element, index) => {
       data.push(kontajnery[index]);
-    })/*
+    })*/
     pamiatky.forEach((element, index) => {
       data.push(pamiatky[index]);
     })
