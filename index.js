@@ -24,14 +24,13 @@ function readJSONFile(filename, callback) {
 
 express()
   .get('/', (req, res) => res.send('Home Page'))
-  .get('/get', (req, res) => 
-    {
-      readJSONFile('https://egov.presov.sk/Default.aspx?NavigationState=778:0::plac1889:_144153_5_8', function (err, json) {
-        if(err) { throw err; }
-        console.log(json);
-      });
-      res.send(json);
-    })
+  .get('/get', function(req, res){
+    readJSONFile('https://egov.presov.sk/Default.aspx?NavigationState=778:0::plac1889:_144153_5_8', function (err, json) {
+      if(err) { throw err; }
+      console.log(json);
+    });
+    res.send(json);
+  })
   .post('/post', (req, res => res.send('post')))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
