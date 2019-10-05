@@ -8,6 +8,11 @@ let Kontajnery = [];
 let Fontany = [];
 let Pamiatky = [];
 let Wc = [];
+/*let Obchody = [
+  {
+    address : 
+  }
+];*/
 
 
 
@@ -171,30 +176,32 @@ express()
     })
   })
   .get('/vsetko', (req, res) => {
-    let data = [];
+    if(Kose[0] == null){
+      KoseF('https://egov.presov.sk/GeoDataKatalog/separovany_zber.json');
+      PamiatkyF('https://egov.presov.sk/GeoDataKatalog/sakralne_objekty.json');
+      FontanyF('https://egov.presov.sk/GeoDataKatalog/fontany_pramene.json');
+      WcF('https://egov.presov.sk/GeoDataKatalog/verejne_wc.json');
+    }
+      let data = [];
     
-    let kose = Kose.slice(0,10);
-    //let kontajnery = Kontajnery.slice(0,8);
-    let pamiatky = Pamiatky.slice(0,10);
-    let fontany = Fontany.slice(0,8);
-    let wc = Wc.slice(0,10);
+      let kose = Kose.slice(0,10);
+      let pamiatky = Pamiatky.slice(0,10);
+      let fontany = Fontany.slice(0,8);
+      let wc = Wc.slice(0,10);
 
-    kose.forEach((element, index) => {
-      data.push(kose[index]);
-    })
-    /*kontajnery.forEach((element, index) => {
-      data.push(kontajnery[index]);
-    })*/
-    pamiatky.forEach((element, index) => {
-      data.push(pamiatky[index]);
-    })
-    fontany.forEach((element, index) => {
-      data.push(fontany[index]);
-    })
-    wc.forEach((element, index) => {
-      data.push(wc[index]);
-    })
-    
-    res.send(data);
+      kose.forEach((element, index) => {
+        data.push(kose[index]);
+      })
+      pamiatky.forEach((element, index) => {
+        data.push(pamiatky[index]);
+      })
+      fontany.forEach((element, index) => {
+        data.push(fontany[index]);
+      })
+      wc.forEach((element, index) => {
+        data.push(wc[index]);
+      })
+      
+      res.send(data);
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
