@@ -9,6 +9,8 @@ let Fontany = [];
 let Pamiatky = [];
 let Wc = [];
 
+
+
 const KoseF = async (url) => {
   Kose = [];
   const {data} = await axios.get(url);
@@ -149,7 +151,7 @@ express()
     let data = [];
     
     let kose = Kose.slice(0,10);
-    let kontajnery = Kontajnery.slice(0,8);
+    //let kontajnery = Kontajnery.slice(0,8);
     let pamiatky = Pamiatky.slice(0,10);
     let fontany = Fontany.slice(0,8);
     let wc = Wc.slice(0,10);
@@ -157,9 +159,9 @@ express()
     kose.forEach((element, index) => {
       data.push(kose[index]);
     })
-    kontajnery.forEach((element, index) => {
+    /*kontajnery.forEach((element, index) => {
       data.push(kontajnery[index]);
-    })
+    })/*
     pamiatky.forEach((element, index) => {
       data.push(pamiatky[index]);
     })
