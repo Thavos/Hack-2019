@@ -148,11 +148,11 @@ express()
   .get('/vsetko', (req, res) => {
     let data = [];
     
-    let kose = Kose.slice(0, Kose.length/8);
-    let kontajnery = Kontajnery.slice(0, Kontajnery.length/8);
-    let pamiatky = Pamiatky.slice(0, Pamiatky.length/3);
-    let fontany = Fontany.slice(0, Fontany.length/2);
-    let wc = Wc.slice(0, Wc.length/2);
+    let kose = Kose.slice(0, Kose.length/20);
+    let kontajnery = Kontajnery.slice(0, Kontajnery.length/20);
+    let pamiatky = Pamiatky.slice(0, Pamiatky.length/5);
+    let fontany = Fontany.slice(0, Fontany.length/3);
+    let wc = Wc.slice(0, Wc.length/3);
 
     kose.forEach((element, index) => {
       data.push(kose[index]);
