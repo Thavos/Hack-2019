@@ -148,9 +148,9 @@ express()
   .get('/vsetko', (req, res) => {
     let data = [];
     
-    let kose = Kose.slice(0, Kose.length/2);
-    let kontajnery = Kontajnery.slice(0, Kontajnery.length/2);
-    let pamiatky = Pamiatky.slice(0, Pamiatky.length/2);
+    let kose = Kose.slice(0, Kose.length/5);
+    let kontajnery = Kontajnery.slice(0, Kontajnery.length/4);
+    let pamiatky = Pamiatky.slice(0, Pamiatky.length/3);
     let fontany = Fontany.slice(0, Fontany.length/2);
     let wc = Wc.slice(0, Wc.length/2);
 
