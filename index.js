@@ -63,8 +63,8 @@ const PamiatkyF = async (url) => {
 
   const transform = transformation('5514', 'EPSG:4326');
   geoData.forEach((element, index) => {
-    let myX = element.geometry.coordinates.join(',').split(',');
-    let myY = element.geometry.coordinates.join(',').split(',');
+    let myX = element.geometry.coordinates.join(',').split(',')[0];
+    let myY = element.geometry.coordinates.join(',').split(',')[1];
     newGeoData.push(transform.forward({x: parseFloat(myX), y: parseFloat(myY)}));
   });
 
@@ -85,8 +85,8 @@ const FontanyF = async (url) => {
 
   const transform = transformation('5514', 'EPSG:4326');
   geoData.forEach((element, index) => {
-    let myX = element.geometry.coordinates.join(',').split(',');
-    let myY = element.geometry.coordinates.join(',').split(',');
+    let myX = element.geometry.coordinates.join(',').split(',')[0];
+    let myY = element.geometry.coordinates.join(',').split(',')[1];
     newGeoData.push(transform.forward({x: parseFloat(myX), y: parseFloat(myY)}));
   });
 
@@ -107,8 +107,8 @@ const WcF = async (url) => {
 
   const transform = transformation('5514', 'EPSG:4326');
   geoData.forEach((element, index) => {
-    let myX = element.geometry.coordinates.join(',').split(',');
-    let myY = element.geometry.coordinates.join(',').split(',');
+    let myX = element.geometry.coordinates.join(',').split(',')[0];
+    let myY = element.geometry.coordinates.join(',').split(',')[1];
     newGeoData.push(transform.forward({x: parseFloat(myX), y: parseFloat(myY)}));
   });
 
