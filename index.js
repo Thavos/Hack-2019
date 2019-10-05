@@ -8,11 +8,29 @@ let Kontajnery = [];
 let Fontany = [];
 let Pamiatky = [];
 let Wc = [];
-/*let Obchody = [
+let Obchody = [
   {
-    address : 
+    type : 7,
+    name : 'ODVÁŽ(E)NE',
+    address : 'Floriánova 6, 080 01 Prešov',
+    location : { longitude : 21.238000 , latitude : 48.996840},
+    description : "Potraviny, koreniny"
+  },
+  {
+    type : 7,
+    name : 'ALCHEMILKA',
+    address : 'Hlavná 27, 08001 Prešov',
+    location : { longitude : 21.241920 , latitude : 48.995510},
+    description : "Kozmetika"
+  },  
+  {
+    type : 7,
+    name : 'ČAPOVANÁ KOZMETIKA – DELIZIA',
+    address : 'Masarykova 16, 080 01 Prešov',
+    location : { longitude : 21.247870 , latitude : 48.989530},
+    description : "Drogéria"
   }
-];*/
+];
 
 
 
@@ -150,6 +168,9 @@ const WcF = async (url) => {
 }
 
 express()
+  .get('/obchody', (req, res) => {
+    res.send(Obchody);
+  })
   .get('/kose', (req, res) => {
     KoseF('https://egov.presov.sk/GeoDataKatalog/separovany_zber.json').then((data) => {
       res.send(data);
