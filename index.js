@@ -25,7 +25,7 @@ const KoseF = async (url) => {
   });
 
   geoData.forEach((element, index) => {
-    Kose.push({type : 2, address : element.properties['N_OBJ'], location : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
+    Kose.push({type : 2, address : element.properties['N_OBJ'], location : {longitude : newGeoData[index].x, latitude : newGeoData[index].y}})
   });
 
   return Kose;
@@ -47,7 +47,7 @@ const KontajneryF = async (url) => {
   });
 
   geoData.forEach((element, index) => {
-    Kontajnery.push({type : 3, address : element.properties['N_OBJ'], location : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
+    Kontajnery.push({type : 3, address : element.properties['N_OBJ'], location : {longitude : newGeoData[index].x, latitude : newGeoData[index].y}})
   });
 
   return Kontajnery;
@@ -69,7 +69,7 @@ const PamiatkyF = async (url) => {
   });
 
   geoData.forEach((element, index) => {
-    Pamiatky.push({type : 4, address : element.properties['N_OBJ'], location : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
+    Pamiatky.push({type : 4, address : element.properties['N_OBJ'], location : {longitude : newGeoData[index].x, latitude : newGeoData[index].y}})
   });
 
   return Pamiatky;
@@ -91,7 +91,7 @@ const FontanyF = async (url) => {
   });
 
   geoData.forEach((element, index) => {
-    Fontany.push({type : 5, address : element.properties['N_OBJ'], location : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
+    Fontany.push({type : 5, address : element.properties['N_OBJ'], location : {longitude : newGeoData[index].x, latitude : newGeoData[index].y}})
   });
 
   return Fontany;
@@ -113,7 +113,7 @@ const WcF = async (url) => {
   });
 
   geoData.forEach((element, index) => {
-    Wc.push({type : 6, address : element.properties['N_OBJ'], location : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
+    Wc.push({type : 6, address : element.properties['N_OBJ'], location : {longitude : newGeoData[index].x, latitude : newGeoData[index].y}})
   });
 
   return Wc;
