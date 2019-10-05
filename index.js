@@ -43,7 +43,7 @@ const KoseF = async (url) => {
         properties.paper = true;
         more++;
       }
-      if(element.properties['N_OBJ'].includes('kov') == 1){
+      if(element.properties['N_OBJ'].includes('kov)') == 1){
         properties.metal = true;
         more++;
       }
