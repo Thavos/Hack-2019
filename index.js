@@ -25,7 +25,7 @@ const KoseF = async (url) => {
   });
 
   geoData.forEach((element, index) => {
-    Kose.push({adress : element.properties['N_OBJ'], coordinates : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
+    Kose.push({id : 2, adress : element.properties['N_OBJ'], coordinates : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
   });
 
   return Kose;
@@ -47,7 +47,7 @@ const KontajneryF = async (url) => {
   });
 
   geoData.forEach((element, index) => {
-    Kontajnery.push({adress : element.properties['N_OBJ'], coordinates : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
+    Kontajnery.push({id : 3, adress : element.properties['N_OBJ'], coordinates : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
   });
 
   return Kontajnery;
@@ -69,7 +69,7 @@ const PamiatkyF = async (url) => {
   });
 
   geoData.forEach((element, index) => {
-    Pamiatky.push({adress : element.properties['N_OBJ'], coordinates : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
+    Pamiatky.push({id : 4, adress : element.properties['N_OBJ'], coordinates : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
   });
 
   return Pamiatky;
@@ -91,7 +91,7 @@ const FontanyF = async (url) => {
   });
 
   geoData.forEach((element, index) => {
-    Fontany.push({adress : element.properties['N_OBJ'], coordinates : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
+    Fontany.push({id : 5, adress : element.properties['N_OBJ'], coordinates : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
   });
 
   return Fontany;
@@ -113,7 +113,7 @@ const WcF = async (url) => {
   });
 
   geoData.forEach((element, index) => {
-    Wc.push({adress : element.properties['N_OBJ'], coordinates : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
+    Wc.push({id : 6, adress : element.properties['N_OBJ'], coordinates : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
   });
 
   return Wc;
@@ -144,5 +144,32 @@ express()
     WcF('https://egov.presov.sk/GeoDataKatalog/verejne_wc.json').then((data) => {
       res.send(data);  
     })
+  })
+  .get('/vsetko', (req, res) => {
+    let data = [];
+    
+    let kose = Kose.slice(0, Kose.length/2);
+    let kontajnery = Kontajnery.slice(0, Kontajnery.length/2);
+    let pamiatky = Pamiatky.slice(0, Pamiatky.length/2);
+    let fontany = Fontany.slice(0, Fontany.length/2);
+    let wc = Wc.slice(0, Wc.length/2);
+
+    kose.forEach((element, index) => {
+      data.push(kose[index]);
+    })
+    kontajnery.forEach((element, index) => {
+      data.push(kontajnery[index]);
+    })
+    pamiatky.forEach((element, index) => {
+      data.push(pamiatky[index]);
+    })
+    fontany.forEach((element, index) => {
+      data.push(fontany[index]);
+    })
+    wc.forEach((element, index) => {
+      data.push(wc[index]);
+    })
+    
+    res.send(data);
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
