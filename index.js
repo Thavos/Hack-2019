@@ -13,4 +13,5 @@ let VyznamneObjekty;
 
 express()
   .get('/', (req, res) => res.send('Home Page'))
+  .get('/Objekty', (req, res) => res.send(VyznamneObjekty))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
