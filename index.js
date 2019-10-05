@@ -7,6 +7,7 @@ let GeoJson;
 let VyznamneObjekty;
 
 const Data = [];
+const Data2 = [];
 
 
 const getData = async () => {
@@ -52,10 +53,10 @@ const getGeoData2 = async (url) => {
   });
 
   geoData.forEach((element, index) => {
-    Data.push({adress : element.properties['N_OBJ'], coordinates : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
+    Data2.push({adress : element.properties['N_OBJ'], coordinates : {longitude : newGeoData[index].y, latitude : newGeoData[index].x}})
   });
 
-  return Data;
+  return Data2;
 }
 
 express()
