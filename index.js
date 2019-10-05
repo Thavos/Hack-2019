@@ -149,7 +149,7 @@ express()
     let data = [];
     
     let kose = Kose.slice(0, Kose.length/8);
-    let kontajnery = Kontajnery.slice(0, Kontajnery.length/6);
+    let kontajnery = Kontajnery.slice(0, Kontajnery.length/8);
     let pamiatky = Pamiatky.slice(0, Pamiatky.length/3);
     let fontany = Fontany.slice(0, Fontany.length/2);
     let wc = Wc.slice(0, Wc.length/2);
