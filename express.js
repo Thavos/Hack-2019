@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express', '4.17.1')
 const app = express();
 const port = 3000;
 
