@@ -30,9 +30,15 @@ let Obchody = [
     location : { longitude : 21.247870 , latitude : 48.989530},
     description : "Drogéria"
   }
-];
+];/*
+let Vylety = [
+  {
 
+  },
+  {
 
+  }]
+*/
 
 const KoseF = async (url) => {
   Kose = [];
@@ -72,7 +78,9 @@ const KoseF = async (url) => {
       if(more > 1){
         properties.more = true;
       }
-      Kose.push({type : 2, address : element.properties['N_OBJ'], location : {longitude : newGeoData[index].x, latitude : newGeoData[index].y}, property : properties})
+      if(more !== 0){
+        Kose.push({type : 2, address : element.properties['N_OBJ'], location : {longitude : newGeoData[index].x, latitude : newGeoData[index].y}, property : properties})
+      }
     }
   });
 
