@@ -59,7 +59,6 @@ const KoseF = async (url) => {
 
   let geoData = data.features;
   let newGeoData = [];
-  console.log(geoData[0].geometry.coordinates.join(',').split(','));
 
   const transform = transformation('5514', 'EPSG:4326');
   geoData.forEach((element, index) => {
@@ -106,7 +105,6 @@ const KontajneryF = async (url) => {
 
   let geoData = data.features;
   let newGeoData = [];
-  console.log(geoData[0].geometry.coordinates.join(',').split(','));
 
   const transform = transformation('5514', 'EPSG:4326');
   geoData.forEach((element, index) => {
@@ -128,7 +126,6 @@ const PamiatkyF = async (url) => {
 
   let geoData = data.features;
   let newGeoData = [];
-  console.log(geoData[0].geometry.coordinates.join(',').split(','));
 
   const transform = transformation('5514', 'EPSG:4326');
   geoData.forEach((element, index) => {
@@ -150,7 +147,6 @@ const FontanyF = async (url) => {
 
   let geoData = data.features;
   let newGeoData = [];
-  console.log(geoData[0].geometry.coordinates.join(',').split(','));
 
   const transform = transformation('5514', 'EPSG:4326');
   geoData.forEach((element, index) => {
@@ -172,7 +168,6 @@ const WcF = async (url) => {
 
   let geoData = data.features;
   let newGeoData = [];
-  console.log(geoData[0].geometry.coordinates.join(',').split(','));
 
   const transform = transformation('5514', 'EPSG:4326');
   geoData.forEach((element, index) => {
