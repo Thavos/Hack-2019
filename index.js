@@ -222,7 +222,9 @@ express()
       wc.forEach((element, index) => {
         data.push(wc[index]);
       })
-      
+      Obchody.forEach((element, index) => {
+        data.push(Obchody[index]);
+      })
       res.send(data);
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
