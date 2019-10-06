@@ -30,15 +30,12 @@ let Obchody = [
     location : { longitude : 21.247870 , latitude : 48.989530},
     description : "Drogéria"
   }
-];/*
+];
 let Vylety = [
   {
-
-  },
-  {
-
+    picture : './Trip_Images/kalvaria.jpg'
   }]
-*/
+
 
 const KoseF = async (url) => {
   Kose = [];
