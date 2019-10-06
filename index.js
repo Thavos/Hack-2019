@@ -72,7 +72,7 @@ const KoseF = async (url) => {
       if(more > 1){
         properties.more = true;
       }
-      Kose.push({type : 2, address : element.properties['N_OBJ'], location : {longitude : newGeoData[index].x, latitude : newGeoData[index].y, property : properties}})
+      Kose.push({type : 2, address : element.properties['N_OBJ'], location : {longitude : newGeoData[index].x, latitude : newGeoData[index].y}, property : properties})
     }
   });
 
