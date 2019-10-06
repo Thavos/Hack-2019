@@ -249,6 +249,9 @@ express()
       Obchody.forEach((element, index) => {
         data.push(Obchody[index]);
       })
+      Vylety.forEach((element, index) => {
+        data.push(Vylety[index]);
+      })
       res.send(data);
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
