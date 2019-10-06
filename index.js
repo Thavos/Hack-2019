@@ -33,7 +33,7 @@ let Obchody = [
 ];
 let Vylety = [
   {
-    picture : './Trip_Images/kalvaria.jpg'
+    picture : 'Trip_Images\kalvaria.jpg'
   }]
 
 
@@ -173,6 +173,9 @@ const WcF = async (url) => {
 }
 
 express()
+  .get('/trip_1', (req, res) => {
+    res.send('https://saris-hack-2019.herokuapp.com/kalvaria.jpg')
+  })
   .get('/obchody', (req, res) => {
     res.send(Obchody);
   })
