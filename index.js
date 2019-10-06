@@ -33,8 +33,24 @@ let Obchody = [
 ];
 let Vylety = [
   {
-    picture : 'Trip_Images\kalvaria.jpg'
-  }]
+    type : 8,
+    name : "Prešovská kalvária",
+    location : { longitude : 21.225900 , latitude : 48.988030},
+    rating : 4.2,
+    picture : 'https://kulturnepamiatkyslovensko.webnode.sk/_files/200000062-5fb1960abb/kalv%C3%A1ria.jpeg'
+  },{
+    type : 8,
+    name : "Ľuboviansky hrad",
+    location : { longitude : 20.697890 , latitude : 49.313670},
+    rating : 5,
+    picture : 'http://ipravda.sk/res/2018/07/23/thumbs/hrad-lubovna-clanokW.jpg'
+  },{
+    type : 8,
+    name : "Kapušiansky hrad",
+    location : { longitude : 21.320351 , latitude : 49.054644},
+    rating : 4.5,
+    picture : 'https://www.severovychod.sk/content/images/1/12238-kapusiansky-hrad_full.jpg'
+}]
 
 
 const KoseF = async (url) => {
@@ -173,8 +189,8 @@ const WcF = async (url) => {
 }
 
 express()
-  .get('/trip_1', (req, res) => {
-    res.send('https://saris-hack-2019.herokuapp.com/kalvaria.jpg')
+  .get('/vylety', (req, res) => {
+    res.send(Vylety);
   })
   .get('/obchody', (req, res) => {
     res.send(Obchody);
